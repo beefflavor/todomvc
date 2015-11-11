@@ -40,13 +40,14 @@ INSTALLED_APPS = (
     'django_extensions',
     'rest_framework',
     'todo',
+    'api'
 )
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
+
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -78,12 +79,15 @@ WSGI_APPLICATION = 'todomvc.wsgi.application'
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+  'default': {
+      'ENGINE': 'django.db.backends.postgresql_psycopg2',
+      'NAME': 'todo',
+      'USER': 'sparatan117',
+      'PASSWORD': '',
+      'HOST': '127.0.0.1',
+      'PORT': '',
+  }
 }
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
